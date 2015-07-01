@@ -3,7 +3,7 @@
 Name: opendaylight-lithium
 Summary: OpenDaylight SDN Controller
 Version: 0
-Release: 1
+Release: 1%{?dist}
 Source0: https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/distribution-karaf/0.3.0-Lithium/distribution-karaf-0.3.0-Lithium.tar.gz
 Source1: opendaylight-lithium.service
 Patch0: 0001-opendaylight-lithium-remove-credentials.patch
