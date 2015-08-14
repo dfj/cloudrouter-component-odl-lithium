@@ -3,7 +3,7 @@
 Name: opendaylight-lithium
 Summary: OpenDaylight SDN Controller
 Version: 0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Source0: https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/distribution-karaf/0.3.0-Lithium/distribution-karaf-0.3.0-Lithium.tar.gz
 Source1: opendaylight-lithium.service
 Patch0: 0001-opendaylight-lithium-remove-credentials.patch
@@ -12,8 +12,8 @@ License: EPL-1.0
 URL: http://www.opendaylight.org
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-buildroot
-
-Requires: java-devel >= 1.7.0
+%{?rhel:Requires: java-1.8.0-openjdk-devel}
+%{?fedora:Requires: java-devel >= 1.8.0}
 Requires(pre): shadow-utils, glibc-common
 Requires(postun): shadow-utils
 BuildRequires: systemd
@@ -77,5 +77,8 @@ rpmquery --query --whatprovides opendaylight > /dev/null \
 %attr(0644,-,-) %{_unitdir}/%{name}.service
 
 %changelog
-* Tue Jun 30 2015 David Jorm - 0-1
+* Fri Aug 14 2015 John Siegrist <jsiegrist@iix.net> - 0-2
+- Modified package dependencies to require Java 1.8.0.
+
+* Tue Jun 30 2015 David Jorm <djorm@iix.net> - 0-1
 - Initial creation
