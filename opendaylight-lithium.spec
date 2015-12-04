@@ -3,8 +3,8 @@
 Name: opendaylight-lithium
 Summary: OpenDaylight SDN Controller
 Version: 0
-Release: 2%{?dist}
-Source0: https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/distribution-karaf/0.3.0-Lithium/distribution-karaf-0.3.0-Lithium.tar.gz
+Release: 3%{?dist}
+Source0: https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/distribution-karaf/0.3.3-Lithium-SR3/distribution-karaf-0.3.3-Lithium-SR3.tar.gz
 Source1: opendaylight-lithium.service
 Patch0: 0001-opendaylight-lithium-remove-credentials.patch
 Group: Applications/Communications
@@ -77,8 +77,9 @@ rpmquery --query --whatprovides opendaylight > /dev/null \
 %attr(0644,-,-) %{_unitdir}/%{name}.service
 
 %changelog
+* Fri Dec 04 2015 David Jorm <djorm@iix.net> - 0-3
+- Upgrade to SR3
 * Fri Aug 14 2015 John Siegrist <jsiegrist@iix.net> - 0-2
 - Modified package dependencies to require Java 1.8.0.
-
 * Tue Jun 30 2015 David Jorm <djorm@iix.net> - 0-1
 - Initial creation
